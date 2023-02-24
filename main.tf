@@ -20,6 +20,7 @@ provider "google" {
 # Create a VM instance from a public image
 # in the `default` VPC network and subnet
 
+/*
 resource "google_compute_instance" "default" {
   name         = "my-vm"
   machine_type = "n1-standard-1"
@@ -37,7 +38,7 @@ resource "google_compute_instance" "default" {
   }
 }
 # [END compute_basic_vm_default_vpc_network]
-
+*/
 # [START vpc_compute_basic_vm_custom_vpc_network]
 resource "google_compute_network" "custom" {
   name                    = "my-network"
