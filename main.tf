@@ -1,7 +1,21 @@
+
+terraform {
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+      version = "4.51.0"
+    }
+  }
+}
+
 provider "google" {
+  credentials = file("application_default_credentials.json")
+
   project = "gft-db-network-team-test"
   region  = "us-central1"
+  zone    = "us-central1-c"
 }
+
 
 # Create a VM instance from a public image
 # in the `default` VPC network and subnet
