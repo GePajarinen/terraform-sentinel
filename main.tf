@@ -9,7 +9,7 @@ terraform {
 }
 
 provider "google" {
-  credentials = file("application_default_credentials.json")
+  credentials = file("/tmp/tmp.IqCbkrhaxj/application_default_credentials.json")
 
   project = "gft-db-network-team-test"
   region  = "us-central1"
