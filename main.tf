@@ -1,5 +1,5 @@
 provider "google" {
-  project = "my-project-id"
+  project = "gft-db-network-team-test"
   region  = "us-central1"
 }
 
