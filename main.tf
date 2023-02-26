@@ -20,9 +20,9 @@ provider "google" {
 # Create a VM instance from a public image
 # in the `default` VPC network and subnet
 
-/*
+
 resource "google_compute_instance" "default" {
-  name         = "my-vm"
+  name         = "ge-vm"
   machine_type = "n1-standard-1"
   zone         = "us-central1-a"
 
@@ -41,14 +41,14 @@ resource "google_compute_instance" "default" {
 
 # [START vpc_compute_basic_vm_custom_vpc_network]
 resource "google_compute_network" "custom" {
-  name                    = "my-network"
+  name                    = "ge-network"
   auto_create_subnetworks = false
 }
 # [END vpc_compute_basic_vm_custom_vpc_network]
 
 # [START vpc_compute_basic_vm_custom_vpc_subnet]
 resource "google_compute_subnetwork" "custom" {
-  name          = "my-subnet"
+  name          = "ge-subnet"
   ip_cidr_range = "10.0.1.0/24"
   region        = "europe-west1"
   network       = google_compute_network.custom.id
@@ -60,7 +60,7 @@ resource "google_compute_subnetwork" "custom" {
 # Create a VM in a custom VPC network and subnet
 
 resource "google_compute_instance" "custom_subnet" {
-  name         = "my-vm-instance"
+  name         = "ge-vm-instance"
   tags         = ["allow-ssh"]
   zone         = "europe-west1-b"
   machine_type = "e2-small"
@@ -75,4 +75,3 @@ resource "google_compute_instance" "custom_subnet" {
   }
 }
 # [END compute_basic_vm_custom_subnet]
-*/
